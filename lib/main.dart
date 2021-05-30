@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokapp/SplashScreenPage.dart';
+import 'package:pokapp/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
