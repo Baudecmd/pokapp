@@ -30,7 +30,7 @@
 .pub-cache/
 .pub/
 /build/
-
+/assets/images/pokemon/*.png
 # Web related
 lib/generated_plugin_registrant.dart
 

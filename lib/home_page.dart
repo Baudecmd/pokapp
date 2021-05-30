@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'database/pokemon_service.dart';
+import 'entity/pokemon.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
 
@@ -16,6 +19,18 @@ class _homePage extends State<HomePage> {
           title: Text("Page accueil"),
           backgroundColor: Colors.red,
         ),
-        body: Row(children: [Text("Page accueil de Pokapp")]));
+        body: Column(children: [
+          Text("Page accueil de Pokapp"),
+          ElevatedButton(
+            onPressed: () => test(),
+            child: new Text('Click me'),
+          ),
+        ]));
+  }
+
+  test() async {
+    PokemonService pokemonService = new PokemonService();
+    Pokemon poke = await pokemonService.getPokemon(2);
+    print(poke.name);
   }
 }
