@@ -1,28 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:splash_screen_view/SplashScreenView.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: SplashScreenPage(),
+    );
+  }
+}
+
+class SplashScreenPage extends StatefulWidget {
+  @override
+  _SplashScreenState createState() => new _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreenPage> {
+  @override
+  Widget build(BuildContext context) {
+    return new SplashScreenView(
+      navigateRoute: HomePage(),
+      duration: 3000,
+      imageSize: 130,
+      imageSrc: "assets/images/logo.png",
+      backgroundColor: Colors.white,
     );
   }
 }
@@ -42,6 +51,6 @@ class _homePage extends State<HomePage> {
         appBar: AppBar(
           title: Text("Page accueil"),
         ),
-        body: Text("Page accueil de Pokapp"));
+        body: Row(children: [Text("Page accueil de Pokapp")]));
   }
 }
