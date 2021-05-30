@@ -13,7 +13,7 @@ Icon?
 **/.symlinks/
 profile
 xcuserdata
-/assets/images/
+/assets/images/pokemon/*.png
 **/.generated/
 Flutter/App.framework
 Flutter/Flutter.framework
